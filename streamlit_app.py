@@ -14,8 +14,8 @@ st.title("Retail Store & Customer Insights Dashboard")
 # ------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\ML Capstone\Data\processed_sales_data.csv", parse_dates=["invoice_date"])
-    rfm = pd.read_csv(r"C:\Users\DELL\OneDrive\Desktop\ML Capstone\Data\rfm_customer_segments.csv")
+    df = pd.read_csv("Data/processed_sales_data.csv", parse_dates=["invoice_date"])
+    rfm = pd.read_csv("Data/rfm_customer_segments.csv")
     # Ensure revenue exists
     if "revenue" not in df.columns:
         df["revenue"] = df.get("quantity", 0) * df.get("price", 0)
